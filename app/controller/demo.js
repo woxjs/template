@@ -1,11 +1,11 @@
 import {
-  ControllerBasicClass,
+  ApplicationComponent,
   Controller,
   Get
 } from '@wox/basic';
 
 @Controller('/')
-export default class DemoController extends ControllerBasicClass {
+export default class DemoController extends ApplicationComponent {
   constructor(ctx) {
     super(ctx);
   }

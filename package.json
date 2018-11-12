@@ -1,6 +1,6 @@
 {
   "name": "@wox/template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The template of wox",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config=build/webpack.development.js --hot",
