@@ -4,6 +4,7 @@ const WoxWebpackRuntimePlugin = require('@wox/loader/server');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BasicConfigs = require('./webpack.base');
 const cwd = process.cwd();
 
@@ -25,6 +26,11 @@ module.exports = WebpackMerge(BasicConfigs, {
   },
   plugins:[
     new WoxWebpackRuntimePlugin().loadCommonCase(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, '../index.production.html'),
+      title: 'Wox Application - Production'
+    }),
     new MiniCssExtractPlugin({
       filename: 'style.css'
     })

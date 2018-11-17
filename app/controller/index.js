@@ -1,7 +1,7 @@
 import {
-  ApplicationComponent,
+  Get,
   Controller,
-  Get
+  ApplicationComponent,
 } from '@wox/basic';
 
 @Controller('/')

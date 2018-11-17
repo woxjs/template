@@ -38,6 +38,10 @@ module.exports = env => {
         'postcss-loader',
         'less-loader'
       ]
+    },
+    {
+      test: /\.(png|jpe?g|gif|woff|ttf|svg|woff2|webp|bmp)$/i,
+      use: 'url-loader'
     }
   ]
 }
