@@ -11,6 +11,7 @@ const cwd = process.cwd();
 module.exports = WebpackMerge(BasicConfigs, {
   mode: 'production',
   output: {
+    filename: '[name].[hash:10].js',
     path: path.resolve(cwd, 'dist'),
     publicPath: ''
   },
@@ -32,7 +33,8 @@ module.exports = WebpackMerge(BasicConfigs, {
       title: 'Wox Application - Production'
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: 'style.[hash:10].css',
+      chunkFilename: "[id].[hash:10].css"
     })
   ]
 })
