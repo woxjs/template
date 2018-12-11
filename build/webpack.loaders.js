@@ -40,8 +40,14 @@ module.exports = env => {
       ]
     },
     {
-      test: /\.(png|jpe?g|gif|woff|ttf|svg|woff2|webp|bmp)$/i,
-      use: 'url-loader'
+      test: /\.(png|jpg|gif|eot|svg|ttf|woff|woff2)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[hash:10].[ext]',
+          outputPath: 'assets/'
+        }
+      }]
     }
   ]
 }
