@@ -28,6 +28,7 @@ module.exports = WebpackMerge(BasicConfigs, {
   plugins:[
     new WoxWebpackRuntimePlugin().loadCommonCase(),
     new HtmlWebpackPlugin({
+      chunks: ['app'],
       filename: 'index.html',
       template: path.resolve(__dirname, '../index.production.html'),
       title: 'Wox Application - Production'

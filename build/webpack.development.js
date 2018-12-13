@@ -21,7 +21,8 @@ module.exports = WebpackMerge(BasicConfigs, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../index.development.html'),
-      title: 'Wox Application - Development'
+      title: 'Wox Application - Development',
+      chunks: ['app']
     })
   ]
 });
