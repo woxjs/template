@@ -26,9 +26,6 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(NODE_ENV)
       }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
     })
   ]
 }

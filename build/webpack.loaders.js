@@ -26,7 +26,19 @@ module.exports = env => {
       }
     },
     {
-      test: /\.(le|c)ss$/,
+      test: /\.css$/,
+      use: isPro ? [
+        MiniCssExtractPlugin.loader,
+        'css-loader',
+        'postcss-loader'
+      ] : [
+        'vue-style-loader',
+        'css-loader',
+        'postcss-loader'
+      ]
+    },
+    {
+      test: /\.less$/,
       use: isPro ? [
         MiniCssExtractPlugin.loader,
         'css-loader',
