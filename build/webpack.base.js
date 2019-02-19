@@ -8,7 +8,7 @@ const cwd = process.cwd();
 module.exports = {
   target: 'web',
   entry: {
-    app: path.resolve(cwd, 'node_modules', '@wox/wox/webpack.js')
+    app: path.resolve(cwd, 'node_modules', '@wox/wox/src/webpack.js')
   },
   context: cwd,
   module: {
@@ -16,9 +16,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@wox/config': path.resolve(cwd, '.wox.js')
+      '#': cwd
     },
-    extensions: ['*', '.js', '.vue', '.json']
+    extensions: ['.js', '.jsx', '.vue', '.json']
   },
   plugins: [
     new VueLoaderPlugin(),
