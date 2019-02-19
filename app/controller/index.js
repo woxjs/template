@@ -1,17 +1,13 @@
 import {
-  Get,
-  Controller,
-  ApplicationComponent,
-} from '@wox/basic';
+  Http,
+  Controller
+} from '@wox/wox';
+import IndexPage from '../webview/index.vue';
 
-@Controller('/')
-export default class DemoController extends ApplicationComponent {
-  constructor(ctx) {
-    super(ctx);
-  }
-
-  @Get('/')
-  async welcome() {
-    await this.ctx.render(this.ctx.Webview.Index);
+@Controller
+export default class IndexController {
+  @Http.Get
+  async Home() {
+    await this.ctx.render(IndexPage);
   }
 }

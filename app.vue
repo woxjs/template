@@ -1,5 +1,5 @@
 <template>
-  <WoxPage></WoxPage>
+  <WoxViewPage></WoxViewPage>
 </template>
 <script>
   export default {

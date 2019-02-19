@@ -1,6 +1,6 @@
 const path = require('path');
 const WebpackMerge = require('webpack-merge');
-const WoxWebpackRuntimePlugin = require('@wox/loader/server');
+const WoxWebpackRuntimePlugin = require('@wox/loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -23,13 +23,28 @@ module.exports = WebpackMerge(BasicConfigs, {
         sourceMap: true
       }),
       new OptimizeCSSAssetsPlugin({})
-    ]
+    ],
+    splitChunks: {
+      chunks: 'async',
+      minSize: 100000,
+      minChunks: 2,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      cacheGroups: {
+        commons: {
+          name: "commons",
+          chunks: "async",
+          minChunks: 1
+        }
+      }
+    }
   },
   plugins:[
-    new WoxWebpackRuntimePlugin().loadCommonCase(),
+    new WoxWebpackRuntimePlugin(),
     new HtmlWebpackPlugin({
+      chunks: ['app'],
       filename: 'index.html',
-      template: path.resolve(__dirname, '../index.production.html'),
+      template: path.resolve(__dirname, '../templates/index.production.html'),
       title: 'Wox Application - Production'
     }),
     new MiniCssExtractPlugin({
