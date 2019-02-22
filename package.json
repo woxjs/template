@@ -1,15 +1,15 @@
 {
   "name": "@wox/template",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "The template of wox",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config=build/webpack.development.js --hot --open --disable-host-check",
     "build": "rm -rf dist/ && NODE_ENV=production webpack --config=build/webpack.production.js -p --progress"
   },
   "devDependencies": {
-    "@wox/loader": "^2.0.1",
+    "@wox/loader": "^2.0.2",
     "ajv": "^6.5.5",
-    "autoprefixer": "^9.4.2",
+    "autoprefixer": "^9.4.8",
     "babel-core": "^6.26.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.5",
@@ -30,16 +30,16 @@
     "postcss-loader": "^3.0.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.2",
-    "vue-loader": "^15.4.2",
+    "vue-loader": "^15.6.4",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.5.21",
+    "vue-template-compiler": "^2.6.7",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
+    "webpack-dev-server": "^3.2.0",
     "webpack-merge": "^4.1.5"
   },
   "dependencies": {
-    "@wox/wox": "^2.0.0",
-    "vue": "^2.6.6"
+    "@wox/wox": "^2.0.7",
+    "vue": "^2.6.7"
   }
 }
