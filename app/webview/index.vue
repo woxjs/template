@@ -1,12 +1,12 @@
 <template>
   <div class="page">
-    <img src="https://cn.vuejs.org/images/logo.png" alt="vue logo" />
-    <h1>Wox Application</h1>
-    <p>A dynamic loader MVC architecture based on <a href="https://vuejs.org/" target="_blank">Vue.js</a> development.</p>
+    <img src="https://raw.githubusercontent.com/woxjs/wox/master/logo.svg?sanitize=true" alt="vue logo" />
+    <h1>Wox.js</h1>
+    <p>A dynamic loader MVC architecture based on <a href="https://vuejs.org/" target="_blank">Vue.js</a> development which use web virtual service and web virtual request mode.</p>
     <div class="links">
-      <a href="https://github.com/woxjs" target="_blank">HOME</a>
+      <a href="https://github.com/woxjs/wox" target="_blank">HOME</a>
       <a href="https://github.com/woxjs/wox/issues" target="_blank">ISSUE</a>
-      <a href="https://github.com/woxjs/wox/tree/master/docs" target="_blank">INTRO</a>
+      <a href="https://woxjs.github.io/" target="_blank">INTRO</a>
       <a href="https://www.npmjs.com/package/@wox/wox" target="_blank">NPM</a>
       <a href="https://www.npmjs.com/package/@wox/cli" target="_blank">CLI</a>
     </div>
@@ -21,6 +21,8 @@
 <style lang="less">
   .page{
     padding: 100px 0;
+    width:100%;
+    box-sizing: border-box;
     a{
       color:#46bd87;
       transition:all .3s ease-in;
@@ -45,10 +47,11 @@
     }
     .copyright{
       padding: 30px 0;
-      font-size:12px;
-      color:#ccc;
+      font-size:10px;
+      color:rgba(0,0,0,.1);
+      transform: scale(.8);
       a:link,a:visited{
-        color:#ccc;
+        color:rgba(0,0,0,.1);
       }
       a:hover{
         color:#46bd87;

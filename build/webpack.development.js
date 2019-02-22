@@ -8,6 +8,7 @@ const cwd = process.cwd();
 
 module.exports = WebpackMerge(BasicConfigs, {
   mode: 'development',
+  devtool: "source-map",
   devServer: {
     contentBase: cwd,
     compress: true,
