@@ -1,15 +1,22 @@
 {
   "presets": [
-    "es2015",
-    "stage-0"
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "ie": "8",
+          "chrome": "58",
+        },
+        "useBuiltIns": "usage",
+      },
+    ]
   ],
   "plugins": [
     "transform-vue-jsx",
-    "transform-decorators-legacy",
-    ["transform-runtime", {
-      "polyfill": false,
-      "regenerator": true,
-      "helpers": false
-    }]
+    ["@babel/plugin-proposal-decorators", { 
+      "legacy": true 
+    }], 
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime"
   ]
 }
