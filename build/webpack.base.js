@@ -8,7 +8,7 @@ const cwd = process.cwd();
 module.exports = {
   target: 'web',
   entry: {
-    app: path.resolve(cwd, 'node_modules', '@wox/wox/src/webpack.js')
+    app: path.resolve(cwd, 'webpack.js')
   },
   context: cwd,
   module: {
