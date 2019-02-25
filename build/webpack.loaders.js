@@ -1,10 +1,12 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BabelrcConfigs = require('../.babelrc');
 module.exports = env => {
   const isPro = env === 'production';
   return [
     {
       test: /\.js(x)?$/i,
-      loader: 'babel-loader'
+      loader: 'babel-loader',
+      options: { plugins: BabelrcConfigs.plugins }
     },
     {
       test: /\.vue$/,
