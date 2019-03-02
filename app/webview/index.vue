@@ -10,12 +10,38 @@
       <a href="https://www.npmjs.com/package/@wox/wox" target="_blank">NPM</a>
       <a href="https://www.npmjs.com/package/@wox/cli" target="_blank">CLI</a>
     </div>
+    <p style="text-align:center; padding-top:40px;">{{value}} <button @click="add" :disabled="doing">Add timestamp by delay 800ms</button></p>
     <p class="copyright">Copyright@wox.js.org 2018-present - <a href="mailto:evio@vip.qq.com">evio@vip.qq.com</a></p>
   </div>
 </template>
 <script>
   export default {
-    name: "IndexPage"
+    name: "IndexPage",
+    data() {
+      return {
+        doing: false,
+        value: null
+      }
+    },
+    props: {
+      timestamp: Number,
+    },
+    enter() {
+      this.value = this.timestamp;
+    },
+    methods: {
+      add() {
+        if (this.doing) return;
+        this.doing = true;
+        this.$app.$post('/timestamp', { delay: 800 }).then(timestamp => {
+          this.value = timestamp;
+          this.doing = false;
+        }).catch(e => {
+          this.doing = false;
+          alert(e.message);
+        });
+      }
+    }
   }
 </script>
 <style lang="less">
