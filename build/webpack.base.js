@@ -16,7 +16,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '#': cwd
+      '#': cwd,
+      '@wox/wox': '@wox/wox/src/index.js'
     },
     extensions: ['.js', '.jsx', '.vue', '.json']
   },
