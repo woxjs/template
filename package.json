@@ -2,48 +2,31 @@
   "name": "@wox/template",
   "version": "2.0.3",
   "description": "The template of wox",
+  "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --config=build/webpack.development.js --hot --open --disable-host-check",
-    "build": "rm -rf dist/ && NODE_ENV=production webpack --config=build/webpack.production.js -p --progress"
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-proposal-decorators": "^7.3.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-transform-async-to-generator": "^7.3.4",
-    "@babel/plugin-transform-object-assign": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/runtime": "^7.3.4",
-    "@babel/runtime-corejs2": "^7.3.4",
-    "@wox/loader": "^2.0.2",
-    "autoprefixer": "^9.4.9",
-    "babel-helper-vue-jsx-merge-props": "^2.0.3",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
-    "css-loader": "^1.0.1",
-    "file-loader": "^2.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "less": "^3.8.1",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "@wox/loader": "^2.0.3",
+    "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "mini-css-extract-plugin": "^0.4.4",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss-loader": "^3.0.0",
-    "uglifyjs-webpack-plugin": "^2.1.2",
-    "url-loader": "^1.1.2",
-    "vue-loader": "^15.7.0",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.8",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.2.1",
-    "webpack-merge": "^4.1.5"
+    "vue-template-compiler": "^2.5.21"
   },
   "dependencies": {
-    "@wox/wox": "^2.1.4",
+    "@wox/wox": "^2.1.9",
     "vue": "^2.6.8"
-  }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

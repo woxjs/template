@@ -1,13 +1,24 @@
 archive
-node_modules
-.idea
-bower_components
-explorations
 .DS_Store
-coverage
-perf
-*.map
-npm-debug.log
-.vscode
-.wox.js
+node_modules
+/dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 package-lock.json
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+.wox.js
