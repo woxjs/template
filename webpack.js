@@ -15,5 +15,5 @@ app.createServer(redirect_url).then(() => {
   }
 }).catch(e => {
   app.destoryServer();
-  return Promise.reject(e);
+  return app.emit('error', e);
 });
