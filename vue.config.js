@@ -1,18 +1,20 @@
 const WoxWebpackRuntimePlugin = require('@wox/loader');
-const path = require('path');
 module.exports = {
+  publicPath: '',
+  pages: {
+    app: {
+      entry: './webpack.js',
+      template: 'public/index.html',
+      filename: 'index.html',
+      title: 'Wox App',
+    }
+  },
+  transpileDependencies: [
+    /@wox/
+  ],
   chainWebpack(configs) {
-    configs.entry('app').clear().add('./webpack.js');
     configs.plugin('wox').use(WoxWebpackRuntimePlugin);
     configs.resolve.alias.set('#', process.cwd());
-    configs.module.rule('js')
-      .exclude.clear()
-        .add(/@vue\/cli-service/)
-        .end()
-      .include
-        .add(path.resolve(__dirname, 'app'))
-        .add(/@wox/)
-        .end();
     return configs;
   }
 }
