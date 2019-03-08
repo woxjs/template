@@ -11,7 +11,7 @@ export default class IndexController {
   @Http.Get
   async Home() {
     const timestamp = await this.ctx.post('/timestamp');
-    await this.ctx.render(IndexPage, { timestamp });
+    return <IndexPage timestamp={timestamp} />
   }
 
   @Http.Post('/timestamp')
