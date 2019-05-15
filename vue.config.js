@@ -11,7 +11,8 @@ module.exports = {
     }
   },
   transpileDependencies: [
-    /@wox/
+    /@wox/,
+    /camelcase/
   ],
   chainWebpack(configs) {
     configs.plugin('wox').use(WoxWebpackRuntimePlugin);

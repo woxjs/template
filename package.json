@@ -1,6 +1,6 @@
 {
   "name": "@wox/template",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "The template of wox",
   "private": true,
   "scripts": {
@@ -8,16 +8,16 @@
     "build": "vue-cli-service build"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
     "@wox/loader": "^2.0.3",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "@wox/wox": "^2.1.18",
-    "vue": "^2.6.8"
+    "@wox/wox": "^2.1.28",
+    "vue": "^2.6.10"
   },
   "postcss": {
     "plugins": {
